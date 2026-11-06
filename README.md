@@ -11,7 +11,7 @@ Praktik Lab Session 3B — Pengembangan Program Berbasis Object-Oriented Program
 
 ## Deskripsi
 
-Program konsol untuk **mencatat keuangan pribadi sehari-hari**: pemasukan, pengeluaran, dan tabungan. Program menghitung saldo secara otomatis, menampilkan riwayat transaksi, serta **mengingatkan** tagihan yang belum dibayar dan target tabungan yang belum tercapai. Cocok untuk mahasiswa atau siapa saja yang ingin uangnya lebih terkontrol.
+Program konsol untuk **mencatat keuangan pribadi sehari-hari**: pemasukan, pengeluaran, dan tabungan. Program menghitung saldo secara otomatis, menampilkan riwayat transaksi, serta **mengingatkan** pengeluaran yang belum dibayar dan target tabungan yang belum tercapai. Cocok untuk mahasiswa atau siapa saja yang ingin uangnya lebih terkontrol.
 
 ## Struktur Project
 
@@ -72,7 +72,7 @@ pencatat-keuangan-oop/
 
 ### 5. Interface
 - `Pengingat` mendeklarasikan `perluDiingatkan()` dan `getPesanPengingat()`.
-- `Pengeluaran` (tagihan belum lunas) dan `Tabungan` (target belum tercapai) menggunakan `implements Pengingat` dan memenuhi kedua method tersebut.
+- `Pengeluaran` (belum lunas) dan `Tabungan` (target belum tercapai) menggunakan `implements Pengingat` dan memenuhi kedua method tersebut.
 - `Pemasukan` tidak membutuhkan pengingat sehingga tidak mengimplementasikannya.
 
 ## Cara Menjalankan
@@ -93,10 +93,10 @@ java -cp out Main
 
 --- 1. Detail Transaksi (Polymorphism) ---
 Jenis     : Pemasukan
-Deskripsi : Gaji Freelance
+Deskripsi : Sangu
 Jumlah    : Rp3.000.000
 Tanggal   : 01-11-2026
-Sumber    : Freelance
+Sumber    : Orang Tua
 
 Jenis     : Pengeluaran
 Deskripsi : Makan Siang
@@ -106,10 +106,10 @@ Kategori  : Makanan
 Status    : Lunas
 
 Jenis     : Pengeluaran
-Deskripsi : Tagihan Listrik
+Deskripsi : Biaya Bensin
 Jumlah    : Rp350.000
 Tanggal   : 05-11-2026
-Kategori  : Tagihan
+Kategori  : Transportasi
 Status    : Belum Lunas
 
 Jenis     : Tabungan
@@ -126,27 +126,27 @@ Jumlah baru  : Rp30.000
 Jumlah akhir : Rp30.000
 
 --- 3. Catat Transaksi (Overriding hitungDampakSaldo) ---
-  + Gaji Freelance : +Rp3.000.000
+  + Sangu : +Rp3.000.000
   + Makan Siang : -Rp30.000
-  + Tagihan Listrik : Rp0
+  + Biaya Bensin : Rp0
   + Dana Darurat : -Rp500.000
 Saldo saat ini : Rp2.470.000
 
 --- 4. Riwayat (Overloading ringkasan) ---
-Tanpa tanggal : Gaji Freelance : +Rp3.000.000
-Dengan tanggal: [01-11-2026] Gaji Freelance : +Rp3.000.000
-  [01-11-2026] Gaji Freelance : +Rp3.000.000
+Tanpa tanggal : Sangu : +Rp3.000.000
+Dengan tanggal: [01-11-2026] Sangu : +Rp3.000.000
+  [01-11-2026] Sangu : +Rp3.000.000
   [02-11-2026] Makan Siang : -Rp30.000
-  [05-11-2026] Tagihan Listrik : Rp0
+  [05-11-2026] Biaya Bensin : Rp0
   [03-11-2026] Dana Darurat : -Rp500.000
 
 --- 5. Interface Pengingat ---
-  ! Tagihan belum dibayar: Tagihan Listrik (Rp350.000)
+  ! Pengeluaran belum dibayar: Biaya Bensin (Rp350.000)
   ! Dana Darurat baru 40% dari target Rp5.000.000
 
---- 6. Bayar Tagihan ---
+--- 6. Bayar Biaya Bensin ---
 Saldo sebelum bayar : Rp2.470.000
-  [v] Tagihan Listrik telah dibayar.
+  [v] Biaya Bensin telah dibayar.
 Saldo setelah bayar : Rp2.120.000
 Pengingat tersisa:
   ! Dana Darurat baru 40% dari target Rp5.000.000
@@ -156,10 +156,3 @@ Pemilik          : Febrian
 Jumlah transaksi : 4
 Saldo akhir      : Rp2.120.000
 ```
-
-## Ringkasan Pemenuhan Ketentuan
-
-- [x] Minimal 4 class termasuk `Main` (7 class/interface)
-- [x] Minimal 4 objek (Gaji, Makan Siang, Tagihan Listrik, Dana Darurat) ditambah 1 objek `Dompet`
-- [x] 1 abstract class, 3 subclass, 1 interface
-- [x] Encapsulation, Inheritance, Polymorphism, Abstract Class, Interface

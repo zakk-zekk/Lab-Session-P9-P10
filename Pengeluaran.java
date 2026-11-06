@@ -1,6 +1,6 @@
 /**
- * Subclass 2: Pengeluaran (makan, transport, tagihan). Mengurangi saldo setelah lunas.
- * Mengimplementasikan Pengingat untuk tagihan yang belum dibayar.
+ * Subclass 2: Pengeluaran (makan, bensin, transport). Mengurangi saldo setelah lunas.
+ * Mengimplementasikan Pengingat untuk pengeluaran yang belum dibayar.
  */
 public class Pengeluaran extends Transaksi implements Pengingat {
     private String kategori;
@@ -45,6 +45,6 @@ public class Pengeluaran extends Transaksi implements Pengingat {
 
     @Override
     public String getPesanPengingat() {
-        return "Tagihan belum dibayar: " + getDeskripsi() + " (" + formatRupiah(getJumlah()) + ")";
+        return "Pengeluaran belum dibayar: " + getDeskripsi() + " (" + formatRupiah(getJumlah()) + ")";
     }
 }

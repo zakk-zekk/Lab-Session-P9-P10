@@ -4,9 +4,9 @@ public class Main {
 
         // 4 objek dari class turunan, disimpan dalam referensi superclass (runtime polymorphism)
         Transaksi[] daftar = {
-            new Pemasukan("Gaji Freelance", 3000000, "01-11-2026", "Freelance"),
+            new Pemasukan("Sangu", 3000000, "01-11-2026", "Orang Tua"),
             new Pengeluaran("Makan Siang", 25000, "02-11-2026", "Makanan", true),
-            new Pengeluaran("Tagihan Listrik", 350000, "05-11-2026", "Tagihan", false),
+            new Pengeluaran("Biaya Bensin", 350000, "05-11-2026", "Transportasi", false),
             new Tabungan("Dana Darurat", 500000, "03-11-2026", 5000000, 1500000)
         };
 
@@ -45,7 +45,7 @@ public class Main {
         tampilkanPengingat(pengingat);
         System.out.println();
 
-        System.out.println("--- 6. Bayar Tagihan ---");
+        System.out.println("--- 6. Bayar Biaya Bensin ---");
         System.out.println("Saldo sebelum bayar : " + Transaksi.formatRupiah(dompet.getSaldo()));
         ((Pengeluaran) daftar[2]).bayar();
         System.out.println("Saldo setelah bayar : " + Transaksi.formatRupiah(dompet.getSaldo()));
