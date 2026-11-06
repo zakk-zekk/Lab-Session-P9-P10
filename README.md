@@ -25,7 +25,6 @@ pencatat-keuangan-oop/
 │   ├── Tabungan.java     # Subclass, implements Pengingat
 │   ├── Pengingat.java    # Interface
 │   └── Dompet.java       # Pengelola transaksi dan saldo
-├── .gitignore
 └── README.md
 ```
 
